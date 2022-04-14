@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Sprint 2 NoamBar</title>
+</head>
+
+<body onload="init()">
+    <nav class="main-nav">
+        <h1>LOGO</h1>
+        <div>
+            <button onclick="onGallClick()">Gallery</button>
+            <button>About</button>
+        </div>
+    </nav>
+    <section class="gal-container">
+        <section class="grid-container"></section>
+        <button class="btn-srch" onclick="onSearchBy2()">Serch By Keywords</button>
+        <div class="key-words"></div>
+    </section>
+    <main class="can-edi">
+
+        <section class="main-grid">
+            <section class="canvas-contain">
+                <canvas id="canvas" height="600" width="600"></canvas>
+            </section>
+
+
+            <section class="control-box">
+                <label>Enter Text to Change Line</label>
+                <input class="text" placeholder='change line' onchange="onSetLineTxt(event)">
+                <label>Text Color</label>
+                <input type="color" class="input-color" onchange="onSetColor(event)">
+                <div class="inc-dec-con">
+                    <button value=1 onclick="onIncDecClick(event)">A+</button>
+                    <button value=-1 onclick="onIncDecClick(event)">A-</button>
+                </div>
+                <button class="side-text" value="left" onclick="onTextLRC(event)">Text R</button>
+                <button class="side-text" value="center" onclick="onTextLRC(event)">Text C</button>
+                <button class="side-text" value="right" onclick="onTextLRC(event)">Text L</button>
+                <button class="switch-line" onclick="onSwitchLine(event)">Switch Line</button>
+                <label>Enter Text for New Line</label>
+                <input class="text" placeholder='add line' onchange="onAddLine(event)">
+                <button class="lst-btn" onclick="onDeleteLine(event)">Delete Line</button>
+                <button class="lst-btn">
+                    <a onclick="onDownload(this)" target="_blank" download="my-meme-canvas.jpg">Download Meme</a>
+                </button>
+            </section>
+        </section>
+
+    </main>
+    <footer>
+        <hr>
+        <h1>LOGO</h1>
+        <p>Copyright & Cofferights Belongs to Me!</p>
+    </footer>
+    <!-- <section class="gallary-container">
+        <canvas id="canvas-gallery" height="500" width="500"></canvas>
+    </section> -->
+
+    <script src="/js/gallary-controller.js"></script>
+    <script src="/js/meme-controller.js"></script>
+    <script src="/js/meme.service.js"></script>
+</body>
+
+</html>
