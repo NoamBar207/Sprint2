@@ -1,0 +1,180 @@
+body {
+    background-color: rgb(48, 81, 48);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body h1 {
+    color: white;
+    margin-left: 2rem;
+}
+
+
+
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+#canvas{
+    margin-left: 2rem;
+}
+
+.gal-container {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap:1rem;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+}
+
+.gall-pic {
+    height: 10rem;
+    width: 10rem;
+    filter: grayscale(100%);
+    transition-duration: 0.5s;
+}
+
+.gall-pic:hover {
+    filter: none;
+}
+
+.gal-btn {
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+}
+
+
+.can-edi {
+    margin-top: 5rem;
+    text-align: center;
+    display: none;
+}
+
+
+
+/* CONTROL BOX */
+.control-box label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+}
+
+.control-box input {
+    display: block;
+    height: 2rem;
+    width: 3rem;
+    margin: 0 auto;
+}
+
+.control-box .text {
+    width: 13rem;
+    margin: 0 auto;
+}
+
+.control-box button {
+    margin: 0 auto;
+    margin-top: 0.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.control-box .inc-dec-con button {
+    height: 3rem;
+    width: 3rem;
+    font-size: larger;
+}
+.control-box .side-text {
+    height: 4rem;
+    width: 4rem;
+    font-size: larger;
+}
+.switch-line {
+    font-size: large;
+    height: 4rem;
+    width: 8rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.control-box .lst-btn{
+    height: 4rem;
+    width: 6rem;
+    font-size: large;
+}
+
+
+/* NAV BAR */
+.main-nav {
+    border-radius: 20px;
+    z-index: 1;
+    background: linear-gradient(.25turn, #105e08, #dce3e3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-nav button {
+    /* display: inline; */
+    height: 100%;
+    width: 5rem;
+    color: green;
+    font-weight: 600;
+}
+
+
+.main-nav div:last-child {
+    margin-right: 2.5rem;
+}
+
+
+/* GALLARY */
+.btn-srch {
+    height: 6rem;
+    width: 10rem;
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.key-words {
+    flex-wrap: wrap;
+    text-align: center;
+    height: 5rem;
+    width: 100%;
+    display: none;
+}
+
+.key-btn {
+    width: fit-content;
+    height: fit-content;
+    margin: 0.5rem;
+    background-color: #4CAF50;
+    /* Green */
+    border-radius: 15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/* FOOTER */
+footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+footer h1{
+    margin:0 auto
+}
+footer p{
+    color: whitesmoke;
+
+}
