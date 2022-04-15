@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sprint 2 NoamBar</title>
 </head>
 
@@ -39,9 +40,9 @@
                     <button value=1 onclick="onIncDecClick(event)">A+</button>
                     <button value=-1 onclick="onIncDecClick(event)">A-</button>
                 </div>
-                <button class="side-text" value="left" onclick="onTextLRC(event)">Text R</button>
-                <button class="side-text" value="center" onclick="onTextLRC(event)">Text C</button>
-                <button class="side-text" value="right" onclick="onTextLRC(event)">Text L</button>
+                <button class="side-text" value="right" onclick="onTextLRC(event)"><i style="font-size:24px" class="fa">&#xf038;</i></button>
+                <button class="side-text" value="center" onclick="onTextLRC(event)"><i style="font-size:24px" class="fa">&#xf039;</i></button>
+                <button class="side-text" value="left" onclick="onTextLRC(event)"><i style="font-size:24px" class="fa">&#xf036;</i></button>
                 <button class="switch-line" onclick="onSwitchLine(event)">Switch Line</button>
                 <label>Enter Text for New Line</label>
                 <input class="text" placeholder='add line' onchange="onAddLine(event)">
