@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/mq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sprint 2 NoamBar</title>
 </head>
@@ -19,37 +20,75 @@
         </div>
     </nav>
     <section class="gal-container">
+        <div class="key-words"></div>
+        <input class="quick-search" list="keywords" type="search" placeholder="Quick Search"
+            oninput=renderBySearch2(value)>
+        <datalist id="keywords">
+            <option value="Funny">
+            <option value="Presidant">
+            <option value="Baby">
+            <option value="Sleep">
+            <option value="Cute">
+            <option value="Dog">
+            <option value="Movie/TV">
+        </datalist>
         <section class="grid-container"></section>
         <button class="btn-srch" onclick="onSearchBy2()">Serch By Keywords</button>
-        <div class="key-words"></div>
+
     </section>
     <main class="can-edi">
 
         <section class="main-grid">
             <section class="canvas-contain">
-                <canvas id="canvas" height="600" width="600"></canvas>
+                <canvas id="canvas"></canvas>
             </section>
 
 
             <section class="control-box">
-                <label>Enter Text to Change Line</label>
-                <input class="text" placeholder='change line' onchange="onSetLineTxt(event)">
-                <label>Text Color</label>
-                <input type="color" class="input-color" onchange="onSetColor(event)">
+                <!-- <label>Enter Text to Change Line</label> -->
+                <input class="text" placeholder='Enter New Text' onchange="onSetLineTxt(event)">
+                <label class="palette">
+                    <i id="palette" style="font-size:3.125rem;" class="fa-solid fa-palette"></i>
+                    <input type="color" class="input-color" title="Set Line Color" oninput="onSetColor(event)">
+                </label>
                 <div class="inc-dec-con">
-                    <button value=1 onclick="onIncDecClick(event)">A+</button>
-                    <button value=-1 onclick="onIncDecClick(event)">A-</button>
+                    <button value=1 title="Font Size Up" onclick="onIncDecClick(event)"
+                        style="font-size:1.5rem">A+</button>
+                    <button value=-1 title="Font Size Down" onclick="onIncDecClick(event)"
+                        style="font-size:1.5rem">A-</button>
                 </div>
-                <button class="side-text" value="right" onclick="onTextLRC(event)"><i style="font-size:24px" class="fa">&#xf038;</i></button>
-                <button class="side-text" value="center" onclick="onTextLRC(event)"><i style="font-size:24px" class="fa">&#xf039;</i></button>
-                <button class="side-text" value="left" onclick="onTextLRC(event)"><i style="font-size:24px" class="fa">&#xf036;</i></button>
-                <button class="switch-line" onclick="onSwitchLine(event)">Switch Line</button>
-                <label>Enter Text for New Line</label>
-                <input class="text" placeholder='add line' onchange="onAddLine(event)">
-                <button class="lst-btn" onclick="onDeleteLine(event)">Delete Line</button>
-                <button class="lst-btn">
-                    <a onclick="onDownload(this)" target="_blank" download="my-meme-canvas.jpg">Download Meme</a>
-                </button>
+                <section>
+
+                    <button class="side-text" value="right" title="Left" onclick="onTextLRC('right')">
+                        <p style="font-size:1.6rem" class="fa">&#xf038;</p>
+                    </button>
+                    <button class="side-text" value="center" title="Center" onclick="onTextLRC('center')">
+                        <p style="font-size:1.6rem" class="fa">&#xf039;</p>
+                    </button>
+                    <button class="side-text" value="left" title="Right" onclick="onTextLRC('left')">
+                        <p style="font-size:1.6rem" class="fa">&#xf036;</p>
+                    </button>
+                    <button class="switch-line" title="Switch Line" onclick="onSwitchLine(event)">
+                        <p class="fa fa-text-height" style="font-size:1.6rem"></p>
+                    </button>
+                    <button title="Add Line" class="lst-btn"  onclick="onAddLine()"><i
+                            class="fa-solid fa-plus" style="font-size:1.6rem"></i></button>
+                    <button title="Delete Line" class="lst-btn" onclick="onDeleteLine(event)" title="Delete Line"><i
+                            class="fa-solid fa-delete-left" style="font-size:1.6rem"></i></button>
+                    <button class="lst-btn" onmouseenter="clearCanvas(-1)" onmouseleave="restoreCanvas(0)">
+                        <a title="Download Meme" onclick="onDownload(this)" target="_blank"
+                            download="my-meme-canvas.jpg" <i class="fa-solid fa-download" style="font-size:1.6rem"></i></a>
+                    </button>
+                </section>
+                <section class="emoji-btn">
+                    <button style="font-size:2rem" onclick="onAddEmoji(event)">😁</button>
+                    <button style="font-size:2rem" onclick="onAddEmoji(event)">😎</button>
+                    <button style="font-size:2rem" onclick="onAddEmoji(event)">😍</button>
+                    <button style="font-size:2rem" onclick="onAddEmoji(event)">😉</button>
+                </section>
+                    <input type="file" id="upload-btn" class="file-input" name="image" onchange="onImgInput(event)"/>
+                    <!-- <button class="btn" onclick="uploadImg()"><i id="upload" class="fa-solid fa-upload"></i></button> -->
+
             </section>
         </section>
 
@@ -63,6 +102,9 @@
         <canvas id="canvas-gallery" height="500" width="500"></canvas>
     </section> -->
 
+
+    <script src="https://kit.fontawesome.com/8cc43d314e.js" crossorigin="anonymous"></script>
+    <script src="/js/upload.service.js"></script>
     <script src="/js/gallary-controller.js"></script>
     <script src="/js/meme-controller.js"></script>
     <script src="/js/meme.service.js"></script>

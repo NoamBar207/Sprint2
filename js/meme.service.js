@@ -42,7 +42,6 @@ function setLineTxt(ev) {
 }
 
 function setColor(ev) {
-    console.log(ev)
     gMeme.lines[gMeme.selectedLineIdx].color = ev.target.value
 }
 
@@ -55,41 +54,57 @@ function switchLine() {
         gMeme.selectedLineIdx++;
     }
     else gMeme.selectedLineIdx = 0;
-    // console.log(gMeme.selectedLineIdx)
 }
 
 function setImg(elBtn) {
-    // console.log(elBtn)
     gMeme.selectedImgId = elBtn.id;
 }
 
-function textLRC(ev) {
-    gMeme.lines[gMeme.selectedLineIdx].align = ev.target.value;
+function textLRC(str) {
+    gMeme.lines[gMeme.selectedLineIdx].align = str;
 }
 
-function addLine(ev) {
+function addLine(str) {
     var newLine = {
         pos: { posX: 250, posY: 250 },
-        lineId: 0,
-        txt: ev.target.value,
-        size: 20,
+        lineId: gMeme.lines.length,
+        txt: (!str) ? "New Line" : str,
+        size: (!str) ? 20 : 40,
         align: 'center',
         color: 'white',
         isDrag: false,
         sizeW: 0
     }
-    gMeme.lines.push(newLine)
+
+    gMeme.lines.push(newLine);
 }
 
-function deleteLine(ev) {
-    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    for(var i=gMeme.selectedLineIdx;i<gMeme.lines.length;i++){
+        gMeme.lines[i].lineId--;
+    }
 }
 
+function removeLetter() {
+    let currLine = gMeme.selectedLineIdx
+    gKeyHistory = gKeyHistory.slice(0, -1);
+    gMeme.lines[currLine].txt = gKeyHistory;
+    renderMeme();
+}
 
+function addLetter(gKeyHistory){
+    let currLine = gMeme.selectedLineIdx;
+    gMeme.lines[currLine].txt = gKeyHistory;
+}
 
+function downloadDeselectL(val) {
+    gMeme.selectedLineIdx = val;
+}
 function isLineClicked(posClick) {
     for (var i = 0; i < gMeme.lines.length; i++) {
         const pos = gMeme.lines[i].pos
+        if (posClick.y - pos.posY > 30 || pos.posY - posClick.y > 30) continue
         const distance = Math.sqrt((pos.posX - posClick.x) ** 2 + (pos.posY - posClick.y) ** 2)
         if (distance <= gMeme.lines[i].sizeW / 2) {
             gMeme.selectedLineIdx = i
@@ -107,6 +122,10 @@ function moveLine(dx, dy) {
     gMeme.lines[gMeme.selectedLineIdx].pos.posX += dx
     gMeme.lines[gMeme.selectedLineIdx].pos.posY += dy
 }
+
+// function setgMemeImg(img){
+
+// }
 // function textHittest(x,y,textIndex,txt){
 //     return(x>=txt.x &&
 //         x<=txt.x+txt.width &&
