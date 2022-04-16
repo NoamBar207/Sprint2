@@ -14,7 +14,6 @@ function init() {
     renderGallery();
 }
 
-
 function renderMeme() {
     const cMeme = getMeme();
     var img = new Image();
@@ -92,7 +91,6 @@ function onGallClick() {
 }
 
 function onTextLRC(str) {
-    // console.log(ev.target.value)
     textLRC(str);
     renderMeme();
 }
@@ -179,7 +177,6 @@ function onMove(ev) {
 function onUp() {
     setLineDrag(false);
     document.body.style.cursor = 'grab';
-    // setCircleDrag(false)
 }
 
 function getEvPos(ev) {
@@ -206,8 +203,6 @@ function resizeCanvas() {
     gElCanvas.height = gElCanvas.width;
 }
 
-
-
 //Listers
 function addListeners() {
     addMouseListeners()
@@ -232,15 +227,12 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchstart', onDown);
 }
 
-
-
 //UpLoad
 function onImgInput(ev) {
     loadImageFromInput(ev, renderImg)
 }
 
 function loadImageFromInput(ev, onImageReady) {
-    // document.querySelector('.share-container').innerHTML = ''
     var reader = new FileReader()
 
     reader.onload = (event) => {

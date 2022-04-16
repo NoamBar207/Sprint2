@@ -1,5 +1,4 @@
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
-// var gImgs = [{id: 1, url: '/img/meme-imgs (square)/1.jpg', keywords: ['funny', 'cat']}];
 
 var gMeme = {
     selectedImgId: 9,
@@ -28,7 +27,6 @@ var gMeme = {
     ]
 }
 
-
 function getMeme() {
     return gMeme;
 }
@@ -50,9 +48,7 @@ function incDecClick(ev) {
 }
 
 function switchLine() {
-    if (gMeme.lines.length - 1 > gMeme.selectedLineIdx) {
-        gMeme.selectedLineIdx++;
-    }
+    if (gMeme.lines.length - 1 > gMeme.selectedLineIdx)gMeme.selectedLineIdx++;
     else gMeme.selectedLineIdx = 0;
 }
 
@@ -116,20 +112,9 @@ function isLineClicked(posClick) {
 
 function setLineDrag(isDrag) {
     gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
-    // console.log(gMeme.lines[gMeme.selectedLineIdx].isDrag)
 }
 
 function moveLine(dx, dy) {
     gMeme.lines[gMeme.selectedLineIdx].pos.posX += dx
     gMeme.lines[gMeme.selectedLineIdx].pos.posY += dy
 }
-
-// function setgMemeImg(img){
-
-// }
-// function textHittest(x,y,textIndex,txt){
-//     return(x>=txt.x &&
-//         x<=txt.x+txt.width &&
-//         y>=txt.y-txt.height &&
-//         y<=txt.y);
-// }

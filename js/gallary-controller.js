@@ -18,8 +18,6 @@ function renderGallery() {
     var strHtml = '';
     gImgs.forEach(img => {
         strHtml += `<button class="gal-btn" onclick="onSetImg(this)" id="${img.id}"> <img src="${img.url}" class="gall-pic"> </button>`
-        // var imgP = new Image();
-        // imgP.src = img.url;
     })
     elGrid.innerHTML = strHtml;
 }
