@@ -101,6 +101,7 @@ function addLetter(gKeyHistory){
 function downloadDeselectL(val) {
     gMeme.selectedLineIdx = val;
 }
+
 function isLineClicked(posClick) {
     for (var i = 0; i < gMeme.lines.length; i++) {
         const pos = gMeme.lines[i].pos
