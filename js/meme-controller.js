@@ -107,7 +107,7 @@ function onAddLetter(letter) {
 function keyUpHandler(ev) {
     var elCheack=document.querySelector('.can-edi')
     if(elCheack.style.display === 'none') return
-    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZאבגדהוזחטיכלמנסעפצקרשת";
+    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZץםןךףאבגדהוזחטיכלמנסעפצקרשת";
     let key = ev.key;
     console.log(key)
     if (key === 'Backspace') {
@@ -197,7 +197,6 @@ function getEvPos(ev) {
             y: ev.pageY - ev.target.offsetTop
         }
     }
-    // console.log(pos)
     return pos
 }
 
@@ -206,7 +205,6 @@ function resizeCanvas() {
     let width = Math.max(270, targetW)
     gElCanvas.width = width
     gElCanvas.height = gElCanvas.width;
-    // gCanvas.height = elContainer.offsetHeight
 }
 
 
