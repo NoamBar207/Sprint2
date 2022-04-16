@@ -125,8 +125,7 @@ function keyUpHandler(ev) {
             onAddLetter(letter);
             break;
         }
-    }
-   
+    }  
 }
 
 function onAddLine() {

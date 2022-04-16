@@ -53,8 +53,12 @@
         width: 3rem;
         font-size: medium;
     }
-   
-
 }
 
 
+@media (max-width: 600px){
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
