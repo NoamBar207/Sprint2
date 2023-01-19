@@ -1,32 +1,39 @@
 body {
-    background: #348F50;
     background: -webkit-linear-gradient(to right, #56B4D3, #348F50);
     background: linear-gradient(to right, #56B4D3, #348F50);
     display: flex;
+    align-items: center;
     flex-direction: column;
+    padding: 0 10px;
+    height: 100vh;
+    margin: 0;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
 }
 
 button:hover {
     cursor: pointer;
+    transform: scale(1.05) rotate(-1deg);
 }
 
 button {
-    border-radius: 5px;
+    border-radius: 100px;
+    color: green;
+    cursor: pointer;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 3px 15px;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 14px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 body h1 {
     color: white;
     margin-left: 2rem;
 }
-
-/* p{
-    justify-self: center;
-} */
-
-
-
-
-
 
 .gal-container {
     margin-top: 6rem;
@@ -70,11 +77,15 @@ body h1 {
     border-radius: 10px;
 }
 
+
+
+
 /*Canvas+ControlBox*/
 .main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    height: 100%;
 }
 
 #canvas {
@@ -86,7 +97,11 @@ body h1 {
     margin-top: 6rem;
     text-align: center;
     display: none;
+    height: 100%;
 }
+
+
+
 
 /* CONTROL BOX */
 .control-box label {
@@ -132,6 +147,11 @@ body h1 {
     margin: 0 auto;
 }
 
+.control-box .change-txt-info{
+    color: white;
+    font-size: 2rem;
+}
+
 .switch-line {
     font-size: large;
     height: 4rem;
@@ -147,7 +167,8 @@ body h1 {
 .control-box .lst-btn {
     height: 3rem;
     width: 3rem;
-    font-size: xx-large;
+    text-align: center;
+    /* font-size: xx-large; */
 }
 
 .control-box .input-color {
@@ -170,19 +191,34 @@ body h1 {
     font-size: large;
 }
 
+.emoji-btn button{
+    background-color: transparent;
+}
+
+
+
+
 /* NAV BAR */
 .main-nav {
+    height: 65px;
+    /* margin-inline: 10px; */
     border-radius: 20px;
     z-index: 1;
     background: linear-gradient(.25turn, #105e08, #dce3e3);
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 96%;
     position: absolute;
     top: 5%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
+}
+
+.logo {
+    height: 100%;
+    border-radius: 20px;
 }
 
 .main-nav button {
@@ -191,6 +227,7 @@ body h1 {
     width: 5rem;
     color: green;
     font-weight: 600;
+    margin-inline-end: 0.5rem;
 }
 
 
@@ -202,7 +239,9 @@ body h1 {
 /* GALLARY */
 .btn-srch {
     height: 6rem;
-    width: 10rem;
+    width: 20rem;
+    margin: 1rem;
+    box-shadow: 10px 9px 5px 1px rgb(64 60 67 / 16%);
     font-size: xx-large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -230,15 +269,70 @@ body h1 {
 }
 
 
+
+/* ABOUT*/
+.about-container{
+    display: none;
+    padding: 10px;
+    height: 100%;
+    width: 95%;
+    margin-top: 6rem;
+}
+
+.about-container h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about-container .how-to{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-container .how-to ul {
+    margin: 0;
+}
+
+.about-container .how-to li {
+    padding: 4px;
+}
+
+.about-container .how-to li span{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.about-container .about-project{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-container .about-project h2{
+    margin: 0;
+    padding: 8px;
+}
+.about-container .about-project h3{
+    margin: 0;
+    padding: 8px;
+}
+
+
+
 /* FOOTER */
 footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 footer h1 {
     margin: 0 auto
+}
+
+.footer-logo{
+    height: 8rem;
+    width: fit-content;
 }
 
 footer p {

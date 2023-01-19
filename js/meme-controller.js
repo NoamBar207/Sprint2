@@ -57,7 +57,7 @@ function onSetLineTxt(ev) {
 
 function onSetColor(ev) {
     ev.preventDefault();
-    document.querySelector('.palette i').style.color = ev.target.value
+    document.querySelector('.palette').style.color = ev.target.value
     setColor(ev);
     renderMeme();
 }
@@ -86,7 +86,20 @@ function onSetImg(elBtn) {
 function onGallClick() {
     var elCont = document.querySelector('.can-edi')
     elCont.style.display = 'none'
+    elCont = document.querySelector('.about-container')
+    elCont.style.display = 'none'
     elCont = document.querySelector('.gal-container')
+    elCont.style.display = 'block'
+}
+
+function onAboutClick() {
+    var elCont = document.querySelector('.can-edi')
+    elCont.style.display = 'none'
+    elCont = document.querySelector('.gal-container')
+    elCont.style.display = 'none'
+    elCont = document.querySelector('.key-words')
+    elCont.style.display = 'none'
+    elCont = document.querySelector('.about-container')
     elCont.style.display = 'block'
 }
 
@@ -97,6 +110,8 @@ function onTextLRC(str) {
 
 
 function onAddLetter(letter) {
+    const cMeme = getMeme();
+    gKeyHistory = cMeme.lines[cMeme.selectedLineIdx].txt
     gKeyHistory += letter;
     addLetter(gKeyHistory);
     renderMeme();
@@ -109,6 +124,7 @@ function keyUpHandler(ev) {
     let key = ev.key;
     console.log(key)
     if (key === 'Backspace') {
+        onAddLetter('');
         removeLetter();
         return
     }

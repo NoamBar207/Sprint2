@@ -7,20 +7,30 @@ var gMeme = {
         {
             pos: { posX: 250, posY: 50 },
             lineId: 0,
-            txt: 'אני כשראיתי את שחף עם חולצה של הצהבת בשיעור',
-            size: 20,
+            txt: 'ADD TEXT HERE',
+            size: 30,
             align: 'center',
-            color: 'blue',
+            color: 'white',
             isDrag: false,
             sizeW: 0,
         },
         {
-            pos: { posX: 250, posY: 450 },
+            pos: { posX: 300, posY: 350 },
             lineId: 1,
-            txt: 'מכבי יש רק בחיפה!חחחחחחחח יגרמנים',
-            size: 20,
+            txt: 'YOU CAN ALSO ADD LINES AND CHANGE COLORS',
+            size: 30,
             align: 'center',
             color: 'green',
+            sizeW: 0,
+            isDrag: false,
+        },
+        {
+            pos: { posX: 250, posY: 200 },
+            lineId: 2,
+            txt: 'OR MOVE LINES USING DRAG AND DROP',
+            size: 30,
+            align: 'center',
+            color: 'red',
             sizeW: 0,
             isDrag: false,
         }
@@ -71,7 +81,7 @@ function addLine(str) {
         isDrag: false,
         sizeW: 0
     }
-
+    gMeme.selectedLineIdx = gMeme.lines.length;
     gMeme.lines.push(newLine);
 }
 

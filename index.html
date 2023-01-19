@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/mq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sprint 2 NoamBar</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/noambar/image/upload/v1673697441/Portfolio/NoamLogo_ft0vkb.png">
+    <title>Meme Generator</title>
 </head>
 
 <body onload="init()">
     <nav class="main-nav">
-        <h1>LOGO</h1>
+        <img class="logo"
+            src="https://res.cloudinary.com/noambar/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1673697441/Portfolio/NoamLogo_ft0vkb.png"
+            alt="">
         <div>
             <button onclick="onGallClick()">Gallery</button>
-            <button>About</button>
+            <button onclick="onAboutClick()">About</button>
         </div>
     </nav>
     <section class="gal-container">
@@ -45,39 +48,40 @@
 
 
             <section class="control-box">
-                <!-- <label>Enter Text to Change Line</label> -->
-                <input class="text" placeholder='Enter New Text' onchange="onSetLineTxt(event)">
+                <div class="change-txt-info">Double click on the line to change its text</div>
+                <!-- <input class="text" placeholder='Enter New Text' onchange="onSetLineTxt(event)"> -->
                 <label class="palette">
                     <i id="palette" style="font-size:3.125rem;" class="fa-solid fa-palette"></i>
                     <input type="color" class="input-color" title="Set Line Color" oninput="onSetColor(event)">
                 </label>
                 <div class="inc-dec-con">
                     <button value=1 title="Font Size Up" onclick="onIncDecClick(event)"
-                        style="font-size:1.5rem">A+</button>
+                        style="font-size:1rem">A+</button>
                     <button value=-1 title="Font Size Down" onclick="onIncDecClick(event)"
-                        style="font-size:1.5rem">A-</button>
+                        style="font-size:1rem">A-</button>
                 </div>
                 <section>
 
-                    <button class="side-text" value="right" title="Left" onclick="onTextLRC('right')">
-                        <p style="font-size:1.6rem" class="fa">&#xf038;</p>
+                    <button class="side-text" value="To the right" title="Left" onclick="onTextLRC('right')">
+                        <p style="font-size:1rem" class="fa">&#xf038;</p>
                     </button>
                     <button class="side-text" value="center" title="Center" onclick="onTextLRC('center')">
-                        <p style="font-size:1.6rem" class="fa">&#xf039;</p>
+                        <p style="font-size:1rem" class="fa">&#xf039;</p>
                     </button>
-                    <button class="side-text" value="left" title="Right" onclick="onTextLRC('left')">
-                        <p style="font-size:1.6rem" class="fa">&#xf036;</p>
+                    <button class="side-text" value="To the left" title="Right" onclick="onTextLRC('left')">
+                        <p style="font-size:1rem" class="fa">&#xf036;</p>
                     </button>
                     <button class="switch-line" title="Switch Line" onclick="onSwitchLine(event)">
                         <p class="fa fa-text-height" style="font-size:1.6rem"></p>
                     </button>
-                    <button title="Add Line" class="lst-btn"  onclick="onAddLine()"><i
-                            class="fa-solid fa-plus" style="font-size:1.6rem"></i></button>
+                    <button title="Add Line" class="lst-btn" onclick="onAddLine()"><i class="fa-solid fa-plus"
+                            style="font-size:1rem"></i></button>
                     <button title="Delete Line" class="lst-btn" onclick="onDeleteLine(event)" title="Delete Line"><i
-                            class="fa-solid fa-delete-left" style="font-size:1.6rem"></i></button>
+                            class="fa-solid fa-delete-left" style="font-size:1rem"></i></button>
                     <button class="lst-btn" onmouseenter="clearCanvas(-1)" onmouseleave="restoreCanvas(0)">
                         <a title="Download Meme" onclick="onDownload(this)" target="_blank"
-                            download="my-meme-canvas.jpg" <i class="fa-solid fa-download" style="font-size:1.6rem"></i></a>
+                            download="my-meme-canvas.jpg"><i class="fa-solid fa-download"
+                                style="font-size:1rem"></i></a>
                     </button>
                 </section>
                 <section class="emoji-btn">
@@ -86,16 +90,41 @@
                     <button style="font-size:2rem" onclick="onAddEmoji(event)">😍</button>
                     <button style="font-size:2rem" onclick="onAddEmoji(event)">😉</button>
                 </section>
-                    <input type="file" id="upload-btn" class="file-input" name="image" onchange="onImgInput(event)"/>
-                    <!-- <button class="btn" onclick="uploadImg()"><i id="upload" class="fa-solid fa-upload"></i></button> -->
+                <input type="file" id="upload-btn" class="file-input" name="image" onchange="onImgInput(event)" />
+                <!-- <button class="btn" onclick="uploadImg()"><i id="upload" class="fa-solid fa-upload"></i></button> -->
 
             </section>
         </section>
 
     </main>
+    <section class="about-container">
+        <h1>Using of the Generator</h1>
+        <article class="explain">
+            <h2>What is the Meme Generator?</h2>
+            It's a free online image maker that lets you add custom resizable text, images, and much more to templates. People often use the generator to customize established memes, such as those found in our collection of Meme Templates. However, you can also upload your own templates.</p>
+        </article>
+        <article class="how-to">
+            <h2>How to make a meme</h2>
+           <ul>
+            <li><span>Choose a template - </span>  You can use one of the popular templates, or hit the upload buttom to upload background from your device.</li>
+            <li><span>Add customizations - </span>   Add text, stickers, change font size, change text color, and move lines around using drag & drop. Furthermore after choosing your template, you can change its background using the upload button.</li>
+            <li><span>Create and share - </span>  After your meme is ready you can download it freely to your computer and share it with whom you like!.</li>
+           </ul>
+        </article>
+        <article class="about-project">
+            <h1>About the Project</h1>
+            <h2>This project builded by Noam Bar. Its a sprint build (only took 3 days).</h2>
+            <h3>The projects is based on pure JavaScript, CSS and HTML 5. The meme editor is based on Canvas technolgy, which brought to us in HTML 5.</h3>
+            <h3>Before starting the project I had one lesson about the Canvas tag, and needed to research more about it in those 3 days.</h3>
+            <h3>In this project I also learnd alot about event listeners, as I needed them in the Canvas itself.</h3>
+            <h3>I have implanted my own Drag & Drop in the app, using calculation of width and height in each elemnt in the Canvas.</h3>
+        </article>
+    </section>
     <footer>
         <hr>
-        <h1>LOGO</h1>
+        <img class="footer-logo"
+            src="https://res.cloudinary.com/noambar/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1673697441/Portfolio/NoamLogo_ft0vkb.png"
+            alt="">
         <p>Copyright & Cofferights Belongs to Me!</p>
     </footer>
     <!-- <section class="gallary-container">
